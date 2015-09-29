@@ -52,7 +52,11 @@ var generateSentence = function(model, desiredSentenceLength){
     sentence.push(newToken);
     lastToken.shift();
     lastToken.push(newToken);
-    if (!model.ngrams[lastToken.join(" ")]) break;
+
+    if (!model.ngrams[lastToken.join(" ")]) {
+      sentence[sentence.length-1] += ".";
+      lastToken = randomItemFromArray(model.keys).split(" ");
+    }
   }
 
   return sentence.join(" ");
