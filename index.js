@@ -58,4 +58,8 @@ var generateSentence = function(model, desiredSentenceLength){
   return sentence.join(" ");
 };
 
-module.exports = { createModel: createModel, add: add, generate: generate };
+module.exports = { 
+  createModel: createModel, 
+  addSentenceToModel: addSentenceToModel, 
+  generateSentence: generateSentence,
+};
